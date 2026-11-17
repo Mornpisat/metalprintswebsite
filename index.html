@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CHROMALUX | បោះពុម្ពរូបភាពលើអាលុយមីញ៉ូម</title>
+<style>
+:root{--navy:#071735;--gold:#f5bd36;--gold2:#ffe49a;--ink:#111827;--muted:#667085}
+*{box-sizing:border-box}body{margin:0;background:#f4f6fb;color:var(--ink);font-family:Arial,"Noto Sans Khmer",sans-serif}
+header{background:linear-gradient(120deg,#06132d,#102d5b);color:#fff;padding:22px 16px;border-bottom:4px solid var(--gold)}
+.wrap{max-width:1100px;margin:auto}.brand{display:flex;align-items:center;gap:14px}.logo{width:54px;height:54px;border:2px solid var(--gold);border-radius:14px;display:grid;place-items:center;color:var(--gold);font-weight:900;font-size:20px}.brand h1{margin:0;color:var(--gold2);letter-spacing:2px}.brand p{margin:5px 0 0;color:#d9e3f7}
+main{padding:24px 16px}.hero{background:#fff;border-radius:18px;padding:24px;margin-bottom:20px;box-shadow:0 8px 30px #14264a12}.hero h2{color:#9b6900;margin:0 0 8px}.hero p{margin:0;color:var(--muted);line-height:1.7}
+.layout{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}.panel{background:#fff;border-radius:18px;padding:22px;box-shadow:0 8px 30px #14264a12}.panel h3{margin:0 0 16px;color:#0b1e43}
+.sizes{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.size{border:1px solid #e3e7ef;border-radius:12px;padding:13px;cursor:pointer;display:flex;justify-content:space-between;gap:8px}.size.active{border:2px solid #d69b19;background:#fff9e8}.size strong{display:block}.size small{color:var(--muted)}
+label{display:block;font-weight:700;margin:15px 0 7px}input,textarea{width:100%;padding:12px;border:1px solid #d8deea;border-radius:10px;font:inherit}input[type=file]{background:#f8fafc}textarea{min-height:80px;resize:vertical}.hint{font-size:12px;color:var(--muted);line-height:1.6}.preview{max-width:100%;max-height:190px;display:none;margin-top:12px;border-radius:12px}
+.summary{background:#071735;color:#fff;border-radius:14px;padding:16px;margin-top:18px}.sumrow{display:flex;justify-content:space-between;margin:8px 0}.deposit{font-size:25px;color:#ffdc78;font-weight:800}.btn{width:100%;border:0;border-radius:12px;padding:15px;background:linear-gradient(90deg,#d99a17,#ffda70);font-weight:800;font-size:16px;cursor:pointer;margin-top:16px;color:#171717}.notice{background:#fff8e7;border:1px solid #f4d58a;padding:12px;border-radius:10px;color:#74510b;font-size:13px;line-height:1.6;margin-top:14px}
+footer{text-align:center;color:#667085;padding:22px;font-size:13px}
+@media(max-width:800px){.layout{grid-template-columns:1fr}.sizes{grid-template-columns:1fr 1fr}}@media(max-width:430px){.sizes{grid-template-columns:1fr}.panel{padding:16px}}
+</style>
+</head>
+<body>
+<header><div class="wrap brand"><img src="chromalux-logo.jpg" alt="CHROMALUX logo" style="width:76px;height:76px;object-fit:contain;border-radius:12px;background:#071735;border:1px solid #d9a52d"><div><h1>CHROMALUX</h1><p>បោះពុម្ពរូបភាពលើបន្ទះអាលុយមីញ៉ូម</p></div></div></header>
+<main class="wrap">
+<section class="hero" style="text-align:center"><img src="chromalux-logo.jpg" alt="CHROMALUX" style="width:min(230px,65%);height:auto;display:block;margin:0 auto 16px;border-radius:16px"><h2>បង្កើតរូបភាពដ៏ស្រស់ស្អាតរបស់អ្នក</h2><p>ជ្រើសរើសទំហំ បញ្ចូលរូបភាព និងបំពេញព័ត៌មាន ដើម្បីផ្ញើការកម្ម៉ង់។ រូបភាពមួយមានទំហំអតិបរមា 20MB។ តម្រូវឱ្យកក់ប្រាក់ 50% មុនចាប់ផ្ដើមផលិត។</p></section>
+<div class="layout">
+<section class="panel"><h3>① ជ្រើសរើសទំហំ</h3><div class="sizes" id="sizes"></div>
+<label for="qty">ចំនួន (ផ្ទាំង)</label><input id="qty" type="number" min="1" value="1">
+<label for="photo">② បញ្ចូលរូបភាព (អតិបរមា 20MB)</label><input id="photo" type="file" accept="image/jpeg,image/png,image/webp">
+<div class="hint">ប្រភេទឯកសារ៖ JPG, PNG, WEBP។ សូមប្រើរូបភាពដែលមានគុណភាពច្បាស់ល្អ។</div><img id="preview" class="preview" alt="រូបភាពមើលជាមុន">
+<label for="name">③ ឈ្មោះអតិថិជន</label><input id="name" placeholder="បញ្ចូលឈ្មោះ">
+<label for="phone">លេខទូរស័ព្ទ</label><input id="phone" type="tel" placeholder="0XX XXX XXX">
+<label for="address">អាសយដ្ឋានដឹកជញ្ជូន</label><textarea id="address" placeholder="ភូមិ ឃុំ/សង្កាត់ ខេត្ត/រាជធានី"></textarea>
+<label for="note">សេចក្ដីណែនាំបន្ថែម (បើមាន)</label><textarea id="note" placeholder="ឧ. សូមកាត់រូបតាមស៊ុម..."></textarea>
+</section>
+<aside class="panel"><h3>④ សង្ខេបការកម្ម៉ង់</h3><div id="selected">សូមជ្រើសរើសទំហំ</div>
+<div class="summary"><div class="sumrow"><span>តម្លៃសរុប</span><strong id="total">$0.00</strong></div><div class="sumrow"><span>ប្រាក់កក់ 50%</span><strong class="deposit" id="deposit">$0.00</strong></div><div class="sumrow"><span>នៅសល់ក្រោយកក់</span><strong id="balance">$0.00</strong></div></div>
+<div class="notice"><b>ការទូទាត់ KHQR</b><br>នៅពេលដាក់ឱ្យដំណើរការពិត យើងនឹងបង្ហាញ QR បង់ប្រាក់ និងផ្ទៀងផ្ទាត់ការទូទាត់តាមប្រព័ន្ធ Bakong/ធនាគារដែលបានភ្ជាប់។</div>
+<button class="btn" id="submit">ផ្ញើការកម្ម៉ង់</button>
+<div class="hint" style="margin-top:12px">នេះជាគំរូសាកល្បង (Prototype)។ ប៊ូតុងកម្ម៉ង់មិនទាន់ផ្ញើទិន្នន័យទៅ Server ឬ Telegram ទេ។</div>
+</aside></div></main>
+<footer>© CHROMALUX — Custom Aluminum Photo Printing</footer>
+<script>
+const products=[["20 × 30 cm",13],["25 × 35 cm",15],["30 × 40 cm",20],["40 × 60 cm",40],["50 × 70 cm",60],["60 × 80 cm",80],["60 × 90 cm",90]];
+let chosen=0;const sizes=document.getElementById('sizes');
+products.forEach((p,i)=>{let d=document.createElement('div');d.className='size'+(i===0?' active':'');d.innerHTML=`<span><strong>${p[0]}</strong><small>អាលុយមីញ៉ូម</small></span><b>$${p[1]}</b>`;d.onclick=()=>{chosen=i;document.querySelectorAll('.size').forEach(x=>x.classList.remove('active'));d.classList.add('active');update()};sizes.appendChild(d)});
+const money=n=>'$'+n.toFixed(2);
+function update(){let q=Math.max(1,parseInt(document.getElementById('qty').value)||1),t=products[chosen][1]*q;document.getElementById('selected').textContent=products[chosen][0]+' × '+q;document.getElementById('total').textContent=money(t);document.getElementById('deposit').textContent=money(t*.5);document.getElementById('balance').textContent=money(t*.5)}
+document.getElementById('qty').addEventListener('input',update);update();
+document.getElementById('photo').addEventListener('change',e=>{const f=e.target.files[0],p=document.getElementById('preview');if(!f){p.style.display='none';return}if(f.size>20*1024*1024){alert('រូបភាពធំពេក។ សូមជ្រើសរើសឯកសារមិនលើស 20MB។');e.target.value='';p.style.display='none';return}if(!['image/jpeg','image/png','image/webp'].includes(f.type)){alert('សូមជ្រើសរើស JPG, PNG ឬ WEBP។');e.target.value='';return}p.src=URL.createObjectURL(f);p.style.display='block'});
+document.getElementById('submit').onclick=()=>{const f=document.getElementById('photo').files[0];if(!document.getElementById('name').value.trim()||!document.getElementById('phone').value.trim()||!f){alert('សូមបំពេញឈ្មោះ លេខទូរស័ព្ទ និងបញ្ចូលរូបភាពជាមុន។');return}alert('នេះជាគំរូសាកល្បង។ ជំហានបន្ទាប់គឺភ្ជាប់ Server, KHQR និង Telegram ដើម្បីទទួល Order ពិតប្រាកដ។')};
+</script>
+</body></html>
